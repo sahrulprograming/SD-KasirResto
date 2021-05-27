@@ -23,21 +23,28 @@ def struk(keranjang):
         subtotal = keranjang[2][x]
         # Mengambil jumlah Pesanan Di dalam Keranjang 2 Dimensi
         jumlah = keranjang[1][x]
+        # untuk menampung semua subtotal menjadi total
         total += subtotal
-
+        # print isi Dari data yang ada di dalam keranjang
         print("|{:^4}| {:<24}|{:^10}|{:^5}|{:^12}|".format(
             nomer, nama, harga, jumlah, subtotal))
     garis()
+    # Print Total harga
     print("{:^48}|{:^12}|".format("", "TOTAL"))
     print("{:^48}+{:^12}+".format("", "-"*12))
     print("{:^48}|{:^12}|".format("", total))
     print("{:^48}+{:^12}+".format("", "-"*12))
     print("\n")
+
+    # looping Uang bayar
     while True:
         uang_bayar = int(input("Masukan Uang Bayar Anda : "))
+        # ketika uang bayar kurang maka akan mengembalikan while true
         if uang_bayar < total:
             print(" Uang Bayar Kurang ")
+        # ketika uang bayar tidak kurang masuk ke else
         else:
+            # Jika uang bayar melebihi Total maka akan ada Print kembalian
             if uang_bayar > total:
                 kembalian = uang_bayar - total
                 if kembalian != 0:
@@ -45,4 +52,5 @@ def struk(keranjang):
             print("\n")
             print("{:^62}".format("Terima Kasih"))
             print("{:^62}".format("Selamat Pesan Kembali"))
+            # Memberhentikan while True
             break

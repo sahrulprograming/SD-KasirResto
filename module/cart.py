@@ -21,7 +21,7 @@ def run():
 
     # ======================================
     # Query Ke database
-    sql = "select nama, harga from barang"
+    sql = "select nama, harga from menu"
     data = Db_cart().get(sql)
     # ======================================
 
